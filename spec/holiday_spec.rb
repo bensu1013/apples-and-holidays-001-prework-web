@@ -55,7 +55,7 @@ describe "holiday_supplies_hash" do
   # Question 4
   # Write a method that adds a new holiday and its associated supplies to any season
   describe "#add_new_holiday_with_supplies" do
-    it "modifies the original hash by adding supplies of a new holiday to a season" do 
+    it "modifies the original hash by adding supplies of a new holiday to a season" do
       columbus_day_supplies = ["Flags", "Parade Floats", "Italian Food"]
 
       add_new_holiday_with_supplies(holiday_supplies, :fall, :columbus_day, columbus_day_supplies)
@@ -69,7 +69,7 @@ describe "holiday_supplies_hash" do
       expect(holiday_supplies[:winter].keys).to include(:valentines_day)
       expect(holiday_supplies[:winter][:valentines_day]).to match_array(valentines_day_supplies)
     end
-  
+
   end
 
   # Question 5
@@ -118,18 +118,18 @@ TEXT
     # of holiday supplies line by line. If, on the other hand, you decided to output it
     # as one big chunk, comment out this test, and uncomment the one below it.
 
-    it "should output the formatted list of holidays and their supplies" do
-      @output.each_line do |line|
-        expect($stdout).to receive(:puts).with(line.chomp)
-      end
+  #  it "should output the formatted list of holidays and their supplies" do
+   #   @output.each_line do |line|
+   #     expect($stdout).to receive(:puts).with(line.chomp)
+    #  end
 
-      all_supplies_in_holidays(holiday_supplies)
-    end
+   #   all_supplies_in_holidays(holiday_supplies)
+  #  end
 
-    # it "should output the formatted list of holidays and their supplies" do
-    #   expect($stdout).to receive(:puts).with(@output)
-    #   all_supplies_in_holidays(holiday_supplies)
-    # end
+     it "should output the formatted list of holidays and their supplies" do
+       expect($stdout).to receive(:puts).with(@output)
+       all_supplies_in_holidays(holiday_supplies)
+     end
 
   end
 
